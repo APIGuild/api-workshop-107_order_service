@@ -23,8 +23,8 @@ public class OrderController {
 
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
     public String getOrder(@PathVariable("orderId") String orderId) {
-        //String user = userAgent.getUser("UserA");
+        String user = userAgent.getUser("UserA");
         String product = productAgent.getProduct("productA");
-        return "This is simple order " + " " + product;
+        return "This is simple order " + user + " " + product;
     }
 }
