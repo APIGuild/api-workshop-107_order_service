@@ -46,3 +46,15 @@ Build Order-Service  Reference --> Build Eureka-Client
             return "This is simple order " + user + " " + product;
         }
     }
+    
+ 4 basic Auth
+ 
+     @Configuration
+     public class FeignClientConfiguration {
+         @Bean
+         public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
+              return new BasicAuthRequestInterceptor(username, pwd);
+         }
+     }
+     
+     @FeignClient(configuration = FeignClientConfiguration.class)
